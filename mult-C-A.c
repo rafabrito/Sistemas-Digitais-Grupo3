@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int mulMatriz(int lin, int col, int matrizA[linha][coluna], int matrizB[linha][coluna], int res[linha][coluna]);
+extern int mulMatriz(int lin, int col, int matrizA[lin][col], int matrizB[lin][col], int res[lin][col]);
 
 int main()
 {
