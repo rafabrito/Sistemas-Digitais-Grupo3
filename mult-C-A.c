@@ -19,7 +19,9 @@ int main()
   fscanf(matriz1, "%d", &a);
   fscanf(matriz2, "%d", &b);
 
-  int aa[a][a], bb[a][a], res[a][a];
+  int (*aa)[a] = malloc(a * sizeof(*aa));
+  int (*bb)[a] = malloc(a * sizeof(*bb));
+  int (*res)[a] = malloc(a * sizeof(*res));
 
   if(a==b) {
 

@@ -18,8 +18,8 @@ int main()
   fscanf(matriz2, "%d", &b);
 
   int (*aa)[a] = malloc(a * sizeof(*aa));
-    int (*bb)[a] = malloc(a * sizeof(*bb));
-    int (*res)[a] = malloc(a * sizeof(*res));
+  int (*bb)[a] = malloc(a * sizeof(*bb));
+  int (*res)[a] = malloc(a * sizeof(*res));
   
  // int aa[a][a], bb[a][a], res[a][a];
 
