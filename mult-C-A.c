@@ -56,6 +56,10 @@ int main()
     fprintf(resultado, "matrizes com tamanhos diferentes\n");
   }
 
+  free(aa);
+  free(bb);
+  free(res);
+
   fclose(matriz1);
   fclose(matriz2);
   fclose(resultado);
