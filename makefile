@@ -17,5 +17,4 @@ mulMatriz.o:mulMatriz.s
 
 clean:
 		rm *.o
-		rm mult-C.exe 
-		rm mult-C-A.exe
+		
