@@ -1,7 +1,7 @@
 .global mulMatriz
 
 mulMatriz:
-	;push    {r4, r5, r6, r7, r8, r9, r10, r11, lr}
+	push    {r4, r5, r6, r7, r8, r9, r10, r11, lr}
         sub     sp, sp, #4                      @ Reserva espaço na pilha para um item
         cmp     r0, #1                          @ Compara se r0 == 1
         str     r3, [sp]                        @ Armazena 4-bytes na memória
