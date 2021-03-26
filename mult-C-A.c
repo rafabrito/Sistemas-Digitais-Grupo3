@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-extern int mulMatriz(int lin, int col, int matrizA[lin][col], int matrizB[lin][col], int res[lin][col]);
+extern int mulMatriz(int lin, int col, int matrizA[lin][col], int matrizB[lin][col], int res[lin][col]); // Função externa que é feita em Assembly
 
 int main()
 {
@@ -12,43 +12,43 @@ int main()
   int i, j, a, b;
   
 
-  matriz1 = fopen("matriz1.txt","r");
-  matriz2 = fopen("matriz2.txt","r");
-  resultado = fopen("resultado.txt","w");
+  matriz1 = fopen("matriz1.txt","r"); // abre arquivo texto para leitura
+  matriz2 = fopen("matriz2.txt","r"); // abre arquivo texto para leitura
+  resultado = fopen("resultado.txt","w"); // abre ou cria arquivo texto para escrita
 
-  fscanf(matriz1, "%d", &a);
-  fscanf(matriz2, "%d", &b);
+  fscanf(matriz1, "%d", &a); //leitura da dimenção da matriz 1
+  fscanf(matriz2, "%d", &b); //leitura da dimenção da matriz 2
 
-  int (*aa)[a] = malloc(a * sizeof(*aa));
-  int (*bb)[a] = malloc(a * sizeof(*bb));
-  int (*res)[a] = malloc(a * sizeof(*res));
+  int (*aa)[a] = malloc(a * sizeof(*aa)); // Alocação de espaço na memória para a matriz 1
+  int (*bb)[a] = malloc(a * sizeof(*bb)); // Alocação de espaço na memória para a matriz 2
+  int (*res)[a] = malloc(a * sizeof(*res)); // Alocação de espaço na memória para a matriz resultado
 
   if(a==b) {
 
     for(i = 0 ; i < a ; i++){
       for(j = 0 ; j < a ; j++){
-        fscanf(matriz1, "%d", &aa[i][j]);
-        res[i][j] = 0;
+        fscanf(matriz1, "%d", &aa[i][j]); // leitura dos valores da matriz 1
+        res[i][j] = 0; // inicializando os valores da matriz resultado com 0
         }
       }
 
 
     for(i = 0 ; i < a ; i++){
       for(j = 0 ; j < a ; j++){
-        fscanf(matriz2, "%d", &bb[i][j]);
+        fscanf(matriz2, "%d", &bb[i][j]); // leitura dos valores da matriz 2
         }
       }
 
       //-----------------------------multiplicação
 
-      mulMatriz(a, a, aa, bb, res);
+      mulMatriz(a, a, aa, bb, res); // chamada de função externa para a multiplicação da matriz 1 e matriz 2
 
       //------------------------------------------
 
 
      for(i = 0 ; i < a ; i++){
       for(j = 0 ; j < a ; j++){
-        fprintf(resultado, "%d\t", res[i][j]);
+        fprintf(resultado, "%d\t", res[i][j]); // escrita dos valores da matriz resultado num arquivo texto
         }
         fprintf(resultado, "\n");
       }
@@ -56,12 +56,12 @@ int main()
     fprintf(resultado, "matrizes com tamanhos diferentes\n");
   }
 
-  free(aa);
-  free(bb);
-  free(res);
+  free(aa); // libera espaço alocado
+  free(bb); // libera espaço alocado
+  free(res); // libera espaço alocado
 
-  fclose(matriz1);
-  fclose(matriz2);
-  fclose(resultado);
+  fclose(matriz1); // fecha arquivo texto
+  fclose(matriz2); // fecha arquivo texto
+  fclose(resultado); // fecha arquivo texto
 
 }

@@ -1,9 +1,9 @@
 all: mult-C.exe mult-C-A.exe
     
-mult-C.exe:mult-C.o
-		gcc -o mult-C mult-C.o
+mult-C.exe:mult.o
+		gcc -o mult-C mult.o
 
-mult-C.o:mult.c
+mult.o:mult.c
 		gcc -c mult.c
 
 mult-C-A.exe:mult-C-A.o mulMatriz.o
